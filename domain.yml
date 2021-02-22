@@ -1,0 +1,40 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - ask_weather
+  - tell_city
+
+actions: 
+  - action_weather
+
+responses:
+  utter_greet:
+  - text: "Hey! I am weatherbot, how  can i help?"
+  utter_default:
+  - text: "sorry could not understand you, please try again" 
+  utter_ask_city:
+  - text: "please tell me the city name"
+
+  utter_is_this_correct:
+  - text: "you want to know the weather of {city}, is this correct"
+    buttons:
+    - title: "yes"
+      payload: "yes"
+    - title: "no"
+      payload: "no"
+
+  utter_goodbye:
+  - text: "Bye"
+
+slots:
+  city:
+    type: unfeaturized
+
+entities:
+  - city
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
